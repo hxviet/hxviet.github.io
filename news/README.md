@@ -1,1 +1,1 @@
-# hxviet.github.io/news
+[hxviet.github.io/news]
