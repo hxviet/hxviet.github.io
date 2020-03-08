@@ -22,10 +22,17 @@ function more() { // add 10 stories
             let Title = document.createElement('a');
             Title.href = item.url;
             Title.innerHTML = item.title;
-            let author = document.createElement('p');
-            author.innerHTML = item.by;
-            document.getElementById('headlines').append(Title);
-            document.getElementById('headlines').append(author);
+
+            let date = document.createElement('p');
+            //convert Unix time to date format
+            let d = new Date(item.time * 1000);
+            date.innerHTML = d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
+
+            let story = document.createElement('div');
+            story.className = 'story';
+            story.append(Title);
+            story.append(date);
+            document.getElementById('headlines').append(story);
         })
 
     }
