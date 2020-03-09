@@ -13,6 +13,14 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
 
 function more() { // add 10 stories
     for (let i=0; i<10; i++) {
+        if (index == news.length) {
+            document.getElementById('more').remove();
+            noMoreNews = document.createElement('p');
+            noMoreNews.id = 'noMoreNews';
+            noMoreNews.innerHTML = 'No more news';
+            document.append(noMoreNews);
+        }
+        
         let id = news[index++];
         fetch('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
         .then( (response) => {
@@ -34,6 +42,5 @@ function more() { // add 10 stories
             story.append(date);
             document.getElementById('headlines').append(story);
         })
-
     }
 }
