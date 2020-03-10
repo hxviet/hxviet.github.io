@@ -17,8 +17,9 @@ function more() { // add 10 stories
             document.getElementById('more').remove();
             noMoreNews = document.createElement('p');
             noMoreNews.id = 'noMoreNews';
-            noMoreNews.innerHTML = 'No more news';
+            noMoreNews.innerHTML = 'No more news today';
             document.append(noMoreNews);
+            break;
         }
         
         let id = news[index++];
